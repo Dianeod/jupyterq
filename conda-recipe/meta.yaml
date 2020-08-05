@@ -31,6 +31,7 @@ test:
     - examples/
     - kernelspec/
     - kdb+Notebooks.ipynb
+    - conda-recipe/prep_requirements.q
 
 about:
   home: https://github.com/KxSystems/jupyterq
