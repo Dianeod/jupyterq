@@ -1,4 +1,2 @@
 beautifulsoup4
 matplotlib
-jupyter>=1.0.0
-pyzmq>=16
