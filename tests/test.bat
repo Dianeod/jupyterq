@@ -1,5 +1,5 @@
 if defined QLIC_KC (
-        pip -q install -r tests\requirements_filtered.txt
+        pip -q install -r tests\requirements.txt
         jupyter nbconvert --allow-errors --to notebook --execute --ExecutePreprocessor.timeout=60 --output tests\test.out kdb+Notebooks.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=60 --output test.out examples\html_display.ipynb
         jupyter nbconvert --allow-errors --to notebook --execute --ExecutePreprocessor.timeout=60 --output remotetest.out examples\remote_example.ipynb
