@@ -86,7 +86,7 @@ jobs:
         - if [[ "x$QLIC_KC" != "x" ]]; then mkdir -p q; echo -n $QLIC_KC |base64 --decode > q/kc.lic; export QLIC=$(pwd)/q; fi
         - export JUPYTERQ_VERSION=$TRAVIS_BRANCH
         - export JUPYTERQ_REQS=$(paste -sd "|" requirements.txt)
-        - conda build conda-recipe --output > packagenames.txt
+        - conda build conda-recipe --output -c kx > packagenames.txt
         - conda build -c kx conda-recipe --no-long-test-prefix
       deploy:
         provider: script
