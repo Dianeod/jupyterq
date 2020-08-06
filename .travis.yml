@@ -81,13 +81,12 @@ jobs:
       os:
         - linux
       install:
-        - conda install -q "conda-build"
-        - conda update conda-build
+        - conda install conda-forge::conda-build
+
       script:
         - if [[ "x$QLIC_KC" != "x" ]]; then mkdir -p q; echo -n $QLIC_KC |base64 --decode > q/kc.lic; export QLIC=$(pwd)/q; fi
         - export JUPYTERQ_VERSION=$TRAVIS_BRANCH
         - export JUPYTERQ_REQS=$(paste -sd "|" requirements.txt)
-        - conda install conda-build==3.19.3
         - conda build conda-recipe --output > packagenames.txt
         - if [[ "x$QLIC_KC" != "x" ]];
           then
