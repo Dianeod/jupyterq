@@ -82,6 +82,7 @@ jobs:
         - linux
       install:
         - conda install -q "conda-build"
+        - conda update conda-build
       script:
         - if [[ "x$QLIC_KC" != "x" ]]; then mkdir -p q; echo -n $QLIC_KC |base64 --decode > q/kc.lic; export QLIC=$(pwd)/q; fi
         - export JUPYTERQ_VERSION=$TRAVIS_BRANCH
