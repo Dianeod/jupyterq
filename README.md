@@ -1,6 +1,6 @@
 # JupyterQ
 
-
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/kxsystems/jupyterq)](https://github.com/kxsystems/jupyterq/releases) [![Travis (.org) branch](https://img.shields.io/travis/kxsystems/jupyterq/master?label=travis%20build)](https://travis-ci.org/kxsystems/jupyterq/branches) [![AppVeyor branch](https://img.shields.io/appveyor/ci/jhanna-kx/jupyterq-opbu8/master?label=appveyor%20build)](https://ci.appveyor.com/project/jhanna-kx/jupyterq-opbu8/branch/master)
 
 Jupyter kernel for kdb+. Features include
 
@@ -16,9 +16,12 @@ Jupyter kernel for kdb+. Features include
 ## Requirements
 
 - kdb+ ≥ v3.5 64-bit
-- Python ≥ 3.5
+- Python ≥ 3.6
 - [embedPy](https://github.com/KxSystems/embedPy)
 
+**Note:**
+
+As of September 5, 2020. Python 3.5 has reached end of life as indicated [here](https://www.python.org/downloads/release/python-3510/). As such official support for this Python Version has been removed in favour of updates to support Python 3.8.
 
 ## Overview
 
@@ -88,11 +91,11 @@ There are two ways to install JupyterQ on your local machine:
 
 If installing on a system which already has kdb+ we recommended installing JupyterQ, embedPy and the conda packaged version of kdb+ in a conda environment, this can be done using the following steps
 
-```
-// create a new environment and install jupyterq and its dependancies
-> conda create -n jupyterqenv -c kx jupyterq
-// move into the new environment where jupyterq can be run
-> conda activate jupyterqenv
+```bash
+# create a new environment and install jupyterq and its dependancies
+conda create -n jupyterqenv -c kx jupyterq
+# activate the environment for use
+conda activate jupyterqenv
 ```
 
 It should be noted that in this case JupyterQ, embedPy and the conda installed kdb can only be run from this activated environment.
